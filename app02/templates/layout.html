@@ -1,3 +1,4 @@
+{# 这里是模板 #}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -30,8 +31,8 @@
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav"><!--上行菜单-->
-                <li><a href="/depart/list">部门管理</a></li>
-                <li><a href="#">用户管理</a></li>
+                <li><a href="/depart/list/">部门管理</a></li>
+                <li><a href="/user/list/">用户管理</a></li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">{# 右上角 #}
@@ -53,7 +54,7 @@
 </nav>
 {# 中间内容 #}
 <div>
-    # 使用的时候只需要写这里面的内容就行了
+    {# 使用的时候只需要写这里面的内容就行了#}
     {% block content %}
 
     {% endblock %}

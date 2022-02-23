@@ -19,9 +19,20 @@ from app02 import views
 
 urlpatterns = [
     # path('admin/', admin.site.urls),
+    # 部门管理
     path('depart/list/', views.depart_list),
     path('depart/add/', views.depart_add),
     path('depart/delete/', views.depart_delete),
     path('depart/edit/', views.depart_edit),
+
+    # 用户管理
+    path('user/list/', views.user_list),
+    path('user/add/', views.user_add),
+    path('user/modelform_add/', views.user_modelform_add),
+    # 修改
+    path('user/<int:nid>/edit/', views.user_edit),
+    path('user/edit/', views.user_edit),
+    # 删除
+    path('user/delete/', views.user_delete),
 ]
 

@@ -1,0 +1,71 @@
+{# 继承模板里的内容 #}
+{% extends 'layout.html' %}
+{% block content %}
+
+    {# 中间内容 #}
+    <div>
+        <div class="container">
+            {# 标题 #}
+            <div style="margin-bottom: 10px">
+                <a class="btn btn-success" href="/user/add/">{# target="_blank点击后在新的页面打开#}
+                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                    新建用户
+                </a>
+                 <a class="btn btn-success" href="/user/modelform_add/">{# target="_blank点击后在新的页面打开#}
+                    <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                    新建用户ModelForm
+                </a>
+            </div>
+            {# 表格 #}
+            <div class="panel panel-default">
+                <!-- Default panel contents -->
+                <div class="panel-heading">
+                    <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                    用户列表
+                </div>
+
+                <!-- Table -->
+                <table class="table">
+                    <thead>
+                    <tr>
+
+                        <th>ID</th>
+                        <th>姓名</th>
+                        <th>密码</th>
+                        <th>年龄</th>
+                        <th>账户余额</th>
+                        <th>入职时间</th>
+                        <th>性别</th>
+                        <th>所属部门</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for obj in queryset1 %}
+
+                        <tr>
+
+                            <td>{{ obj.id }}</td>
+                            <td>{{ obj.name }}</td>
+                            <td>{{ obj.password }}</td>
+                            <td>{{ obj.age }}</td>
+                            <td>{{ obj.account }}</td>
+                            <td>{{ obj.create_date|date:"Y-m-d H:i:s" }}</td>
+                            <td>{{ obj.get_gender_display }}</td>
+                            <td>{{ obj.depart.title }}</td>
+                            <td>
+                                <a class="btn btn-primary btn-xs" href="/user/edit/?nid1={{ obj.id }}">编辑</a>
+                                <a class="btn btn-danger btn-xs" href="/user/delete/?nid1={{ obj.id }}">删除</a>
+                            </td>
+                        </tr>
+                     {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+    </div>
+
+
+{% endblock %}
