@@ -1,0 +1,13 @@
+
+.layout-content{
+    display: flex;
+    justify-content: center;
+    align-content: space-around;
+    flex-wrap: wrap;
+    width: 600px;
+    height: 600px;
+    background-color: rgba(0,0,0,0.5);          /*注意颜色的表示方法：透明度*/
+    border:10px;
+    padding: 50px 50px;                         /*更改“登录”和输入框之间的间隙*/
+    border-radius: 20px;
+}

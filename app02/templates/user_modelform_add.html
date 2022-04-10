@@ -1,9 +1,21 @@
 {% extends 'layout.html' %}
+{% load static %}
+
+
+
+{% block css %}
+    <!--引入css-->
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css' %}">
+
+{% endblock %}
+
+
+
 {% block content %}
-        <!--面板-->
+    <!--面板-->
     <div class="navbar">
 
-        <div class="panel panel-default">
+        <div class="panel panel-default" style="background-color: rgba(255,255,255,0.6);font-size: 22px;color: #0f0f0f">
             <div class="panel-heading">
                 <h3 class="panel-title">新建用户</h3>
             </div>
@@ -25,7 +37,7 @@
             </div>
         </div>
     </div>
-{% endblock %}k %}
+{% endblock %}
         <!--循环写法-->
     <form method="post">
         {% csrf_token %}
@@ -35,3 +47,25 @@
     <br>
     <br>
     </form>
+
+
+
+{% block js %}
+
+    <!--引入js-->
+    <script rel="stylesheet" src="{% static 'plugins/bootstrap-datepicker/js/bootstrap-datepicker.js' %}"></script>
+    <script rel="stylesheet" src="{% static 'plugins/bootstrap-datepicker/locales/bootstrap-datepicker.zh-CN.min.js' %}"></script>
+
+    <script>
+    $(function () {
+        $('#id_create_date').datepicker({
+            format: 'yyyy-mm-dd',
+            startDate: '0',
+            language: "zh-CN",
+            autoclose: true
+        });
+
+    })
+    </script>
+
+{% endblock %}

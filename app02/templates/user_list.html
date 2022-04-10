@@ -4,7 +4,7 @@
 
     {# 中间内容 #}
     <div>
-        <div class="container">
+        <div class="container"  >
             {# 标题 #}
             <div style="margin-bottom: 10px">
                 <a class="btn btn-success" href="/user/add/">{# target="_blank点击后在新的页面打开#}
@@ -17,7 +17,7 @@
                 </a>
             </div>
             {# 表格 #}
-            <div class="panel panel-default">
+            <div class="panel panel-default" style="background-color: rgba(255,255,255,0.6);font-size: 20px;color: #0f0f0f" >
                 <!-- Default panel contents -->
                 <div class="panel-heading">
                     <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
@@ -25,7 +25,7 @@
                 </div>
 
                 <!-- Table -->
-                <table class="table">
+                <table class="table" >
                     <thead>
                     <tr>
 
@@ -62,8 +62,12 @@
                     </tbody>
                 </table>
             </div>
-        </div>
 
+            <!--分页-->
+            <ul class="pagination">
+                {{ page_string }}
+            </ul>
+        </div>
 
     </div>
 
